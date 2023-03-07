@@ -19,22 +19,24 @@
 
 
 ## Dados Tabela de Usuários:
-    1.id
-    2.user_id - NOK
-    3.user_status - NOK
-    4.user_fullname
-    5.user_name
-    6.user_pass
-    7.user_mail
-    8.user_rank
-    9.user_department
-    10.alt_who (mod_who)
-    11.alt_when - NOK (mod_when)
-    12.log_first - NOK
-    13.log_last - NOK
+    1.id PK
+    2.user_id FK
+    3.user_name FK
+    4.product_id FK
+    5.alt_who (mod_who)
+    6.alt_when (mod_when)
 
 ## Dados Tabela de Perfis:
-    .
+    1.user_id
+    2.user_status
+    3.user_fullame
+    4.user_mail
+    5.user_name
+    6.user_pass
+    7.user_rank
+    8.user_department
+    9.log_first
+    10.log_last
     
 ## Dados Tabela de Produtos:
     1.product_id
@@ -43,5 +45,5 @@
     4.product_cost
     5.product_price
     6.product_profit
-    7.product_seek
+    7.product_seekage
     
