@@ -35,3 +35,13 @@
 
 ## Dados Tabela de Perfis:
     .
+    
+## Dados Tabela de Produtos:
+    1.product_id
+    2.product_status
+    3.product_type
+    4.product_cost
+    5.product_price
+    6.product_profit
+    7.product_seek
+    
