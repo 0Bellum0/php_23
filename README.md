@@ -47,6 +47,7 @@
     5.product_price
     6.product_profit
     7.product_seekage
+    8.product_start
     
 ## Dados Tabela de Departamentos:
     1.department_id PK
