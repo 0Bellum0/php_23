@@ -18,32 +18,36 @@
     3.git push
 
 
-## Dados Tabela de Usuários:
+## Dados Tabela de Main:
     1.id PK
     2.user_id FK
     3.user_name FK
     4.product_id FK
+    5.department_id FK
     5.alt_who (mod_who)
     6.alt_when (mod_when)
 
-## Dados Tabela de Perfis:
-    1.user_id
-    2.user_status
+## Dados Tabela de User:
+    1.user_id PK
+    2.user_status 0 or 1
     3.user_fullame
     4.user_mail
     5.user_name
     6.user_pass
     7.user_rank
-    8.user_department
+    8.user_department (?department_id FK?)
     9.log_first
     10.log_last
     
 ## Dados Tabela de Produtos:
-    1.product_id
-    2.product_status
+    1.product_id PK
+    2.product_status 0 or 1
     3.product_type
     4.product_cost
     5.product_price
     6.product_profit
     7.product_seekage
     
+## Dados Tabela de Departamentos:
+    1.department_id PK
+    2.department_name
