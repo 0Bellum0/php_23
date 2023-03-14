@@ -21,6 +21,8 @@
 
 CREATE DATABASE IF NOT EXISTS aluno;
 
+USE aluno;
+
 DROP TABLE IF EXISTS `Department_Info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
