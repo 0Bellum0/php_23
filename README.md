@@ -20,24 +20,32 @@
 
 ## Dados Tabela de Main:
     1.id PK
-    2.user_id FK
-    3.user_name FK
+    2.staff_id FK
+    3.client_id FK
     4.product_id FK
     5.department_id FK
-    5.alt_who (mod_who)
-    6.alt_when (mod_when)
+    6.company_id FK
+    7.rh_id FK
+    8.alt_who (mod_who)
+    9.alt_when (mod_when)
 
-## Dados Tabela de User:
-    1.user_id PK
-    2.user_status 0 or 1
-    3.user_fullame
-    4.user_mail
-    5.user_name
-    6.user_pass
-    7.user_rank
-    8.user_department (?department_id FK?)
-    9.log_first
-    10.log_last
+## Dados Tabela de Staff:
+    1.staff_id PK
+    2.staff_status 0 or 1
+    3.staff_fullame
+    4.staff_mail
+    5.staff_name
+    6.staff_pass
+    7.staff_adress
+    8.staff_cep
+    9.staff_cpf
+    10.staff_nationality
+    11.staff_phone
+    12.staff_estado_civil
+    13.staff_rank
+    14.department_id FK
+    15.log_first
+    16.log_last
     
 ## Dados Tabela de Produtos:
     1.product_id PK
@@ -48,7 +56,41 @@
     6.product_profit
     7.product_seekage
     8.product_start
+    9.department_id FK
+    10.company_id FK
     
 ## Dados Tabela de Departamentos:
     1.department_id PK
     2.department_name
+    3.department_manager FK
+
+## Dados Tabela de companhias:
+    1.company_id PK
+    2.company_name
+    3.company_cnpj
+    4.company_status
+    5.company_hq_adress
+    6.company_hq_cep
+
+## Dados Tabela Clientes:
+    1.client_id PK
+    2.client_status 0 or 1
+    3.client_fullame
+    4.client_mail
+    5.client_name
+    6.client_pass
+    7.client_adress
+    8.client_cep
+    9.client_cpf
+    10.client_nationality
+    11.client_phone
+    12.client_estado_civil
+    13.client_gender
+
+## Dados tabela RH:
+    1.rh_id
+    2.staff_id FK
+    3.staff_status VUK
+    4.staff_department FK
+    5.staff_rank VUK
+    6.staff_salary
