@@ -19,6 +19,10 @@
 -- Table structure for table `client_info`
 --
 
+CREATE DATABASE IF NOT EXISTS aluno;
+
+USE aluno;
+
 DROP TABLE IF EXISTS `client_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
