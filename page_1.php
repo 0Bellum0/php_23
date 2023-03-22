@@ -1,3 +1,9 @@
+<?php
+
+$title = "SELECT FROM USER WHERE id_visiting = $id_user_logged;"; //tornando o $title dinamico
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
