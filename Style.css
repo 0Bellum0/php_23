@@ -1,0 +1,48 @@
+html {
+    background-image: url("https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    background-color:rgb(167, 117, 73);
+}
+
+input, select{
+    background-color: brown;
+    color: yellow;
+}
+
+label, a{
+    color: yellow;
+}
+
+nav{
+    color: wheat;
+}
+
+/*a{
+    color: yellow;
+}*/
+
+input:hover{
+    color: cyan;
+}
+
+a:hover, select:hover{
+    color: cyan;
+}
+
+select:focus-visible{
+    color: cyan;
+}
+
+/*select:hover{
+    color: cyan;
+}*/
+
+#sub:hover{
+    background-color: orange;
+}
+
+.he1{
+color:orange;
+}

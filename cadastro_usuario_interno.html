@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <title>Cadastro</title>
+    <head>
+        <link rel="stylesheet" href="Style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <header>
+            <h1 class="he1">Cadastro de usuário interno</h1>
+        </header>
+        
+        <hr>
+        
+        <nav>
+            <ul>
+                <li><a href="cadastro_cliente.html">Cadastro de clientes</a></li>
+                <li><a href="cadastro_empresa.html">Cadastro de empresas</a></li>
+            </ul>
+        </nav>
+    </head>
+    <hr>
+    
+    <body>
+        <form>
+            <label for="name">Nome completo:</label>
+            <input id="name" type="text" name="fullname" maxlength="255" required>
+
+            <label for="cell">Celular:</label>
+            <input id="cell" type="number" name="celular" maxlength="20" required>
+
+            <label for="civil">Estado civil:</label>
+            <select id="civil" name="estado_civil">
+                <option value="" hidden></option>
+                <option value="solteiro">Solteiro</option>
+                <option value=casado>Casado</option>
+                <option value="separado">Separado</option>
+                <option value="viuvo">Viuvo</option>
+            </select>
+            
+            <br><hr>
+
+            <label for="date">Data de nascimento:</label>
+            <input id="date" type="date" name="data" required>
+
+            <label for="cadate">:--: Data de cadastro:</label>
+            <input id="cadate" type="datetime-local" name="data" required>
+
+            <br><hr>
+
+            <label for="email">E-mail:</label>
+            <input id="email" type="email" name="email" maxlength="255" required>
+
+
+            <label>:--: Genero:</label>
+
+            <input id="masc" type="radio" name="genero" value="masculino">
+            <label for="masc">Masculino</label>
+
+            <input id="fem" type="radio" name="genero" value="feminino">
+            <label for="fem">Feminino</label>
+
+            <br><hr>
+
+            <label for="user">Usuário:</label>
+            <input id="user" type="username" name="login" maxlength="255" required>
+
+            <label for="pass">:--: Senha:</label>
+            <input id="pass" type="password" name="login" minlength="8" maxlength="32" required>
+
+            <br><hr>
+            <label for="pais">Nacionalidade:</label>
+            <select id="pais" name="pais">
+                <option value="" hidden></option>
+                <option value="brasil">Brasil</option>
+            </select>
+
+            <br><hr>
+
+            <label for="cpf">CPF:</label>
+            <input id="cpf" type="text" name="cpf" maxlength="11" required>
+
+            <label for="adress">endereço:</label>
+            <input id="adress" type="" name="adress" required>
+
+            <label for="cep">Cep:</label>
+            <input id="cep" type="" name="cep" maxlength="20" required>
+
+            <br><hr>
+
+            <input id="sub" type="submit" name="sub" value="Enviar">
+
+        </form>
+    </body>
+</html>
