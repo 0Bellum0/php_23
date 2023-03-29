@@ -15,6 +15,10 @@ $vet_par[] = [$numero]; == é a mesma coisa que == $vet_par = array_push([$numer
 
 array_push(); --> função nativa para atribuir os valores para dentro do vetor
 
+$var1 .= $var2 --> concatena os valores denrto das variáveis
+
++= || -= || == --> igual C esse tipo de coisa
+
 
 
 */

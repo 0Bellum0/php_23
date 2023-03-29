@@ -16,7 +16,14 @@ while($numero<=300000){
     $numero++;
 }
 
-echo "Pares: {$vet_par}<br>";
-echo "impares {$vet_impares}<br>"
+print_r($vet_par);
+
+echo "<br>";
+
+print_r($vet_impar);
+
+/*echo "Pares: {$vet_par}<br>"; --> Não rola? */
+
+/*var_dump($vet_par, $vet_impar); --> Se quiser printar varias variáveis e valores e por a vai, pode ir adicionando...*/
 
 ?>
