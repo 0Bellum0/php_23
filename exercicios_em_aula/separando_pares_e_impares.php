@@ -16,11 +16,17 @@ while($numero<=300000){
     $numero++;
 }
 
-print_r($vet_par);
+echo implode(",", $vet_par);
 
 echo "<br>";
 
-print_r($vet_impar);
+echo implode(",", $vet_impar);
+
+/*print_r($vet_par);
+
+echo "<br>";
+
+print_r($vet_impar);*/
 
 /*echo "Pares: {$vet_par}<br>"; --> Não rola? */
 
