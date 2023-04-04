@@ -6,21 +6,19 @@ $vet_impar = [];
 
 while($numero<=300){
     if($numero%2==0){
-        $vet_par = array_push([$numero]);
+        array_push($vet_par, $numero);
         /*$vet_par[] = [$numero]; mesma coisa*/
     }
     else{
-        $vet_impar = array_push([$numero]);
+        array_push($vet_impar, $numero);
         /*$vet_impar[] = [$numero]; mesma coisa*/
     }
     $numero++;
 }
 
-echo implode(",", $vet_par);
+echo "Pares: " . implode(",", $vet_par) . " ";
 
-echo "<br>";
-
-echo implode(",", $vet_impar);
+echo "Impares: " . implode(",", $vet_impar) . " ";
 
 /*print_r($vet_par);
 
