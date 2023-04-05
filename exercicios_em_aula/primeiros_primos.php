@@ -7,6 +7,9 @@ for($numero=2; $numero<=100; $numero++){
         if($numero%$i==0){
             $cont++;
         }
+        else if($cont>2){
+            break;
+        }
     }
     if($cont==2){
         array_push($primos, $numero);

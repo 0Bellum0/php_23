@@ -39,5 +39,7 @@ implode(); -->
 
 explode(); --> 
 
+<br> --> So no navegador || o do proprio php é: \n --> igual do C
+
 */
 ?>
