@@ -4,7 +4,10 @@ $primos = [];
 
 for($numero=2; $numero<=100; $numero++){
     for($i=1, $cont=0; $i<=$numero; $i++){
-        if($numero%$i==0){
+        if($i%2==0){
+            continue;
+        }
+        else if($numero%$i==0){
             $cont++;
         }
         else if($cont>2){
