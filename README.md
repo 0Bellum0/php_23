@@ -8,8 +8,8 @@
     3.git clone link do repositório (Terminal)
     4.ctrl+shift+p e entra na pasta var\www\html\php_23
     5.configurar o git (email e name)
-    5.1. git config --global user.email ""
-    5.2. git config --global user.name ""
+    5.1.git config --global user.email ""
+    5.2.git config --global user.name ""
     6.verificar se o apache esta rodando
     6.1.sudo service apache2 status (Terminal)
     6.2.sudo service apache2 start (se não estiver rodando) (Terminal)
