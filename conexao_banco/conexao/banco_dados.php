@@ -3,6 +3,8 @@
 $hostname = "localhost";
 $username = "aluno";
 $password = "qwe123!";
+$database = "aluno";
+$port = 3306; /*--> padrao sql | 5432 --> padrao do postgress*/
 
 
 try {
@@ -15,6 +17,7 @@ try {
     );
 } catch (Exception $error ){
     echo "ERRO codigo: {$error->getCode()} <br> mensagem: {$error->getMessage()}";
+    $connection = NULL;
     // echo "ERRO codigo: " . $error->getCode() . " <br> mensagem: " . $error->getMessage();
     // echo "ERRO: {$error}";
 }
