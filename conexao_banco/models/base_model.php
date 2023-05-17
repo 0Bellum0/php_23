@@ -7,20 +7,67 @@ abstract class base_model { //abstract --> porque servira de base para outras cl
     
     public function __construct($connection_param = NULL) {
         // uses database php_lab
-        $this->connection_bm = $connection_param;
+        $this -> connection_bm = $connection_param;
     }
 
     public function getconnection(){
-            return $this->connection_bm;
+            return $this -> connection_bm;
     }
 
-    public function create(string $table_name, $rows = [], array $data = []) : int{
+    public function create(string $table, $rows = [], array $value = []){
         
-        $sql = "INSERT INTO '{$table_name}' '{$rows}' VALUES ({$data})";
+        $sql = "INSERT INTO '{$table}' '{$rows}' VALUES ({$value})";
 
-        $id = $this->connection_bm->execute_query($sql)->insert_id;
+        $data = $this -> connection_bm -> query($sql) -> insert_id;
 
-        return $id ?? 0;
+        return $data ?? 0;
+    }
+
+    public function read_all($table, $rows_param = []){
+        $rows = implode(",", $rows_param);
+
+        $sql = "SELECT '{$rows}' FROM '{$table}';";
+
+        $data = $this -> connection_bm -> query($sql);
+
+        return $data;
+    }
+
+    public function read($table, $rows, $value){
+
+        $sql = "SELECT * FROM '{$table}' WHERE '{$rows}' = '{$value}';";
+
+        $data = $this -> connection_bm -> query($sql);
+
+        return $data;
+    }
+
+    public function update($table, $rows_param = [], $value_param = [], $rows_where, $value_where){
+
+        $rows = implode(",", $rows_param);
+
+        $sql = "UPDATE '{$table}'";
+
+        $qtd_rows = count($rows_param);
+        $qtd_value = count($value_param);
+
+        if($qtd_rows != $qtd_value){
+            throw new Exception("Number of rows does not match the number of values!", 500);
+        }
+
+        $sql .= "WHERE '{$rows_where}' = '{$value_where}';";
+
+        $data = $this -> connection_bm -> query($sql);
+
+        return $data;
+    }
+
+    public function delete($table, $rows, $value){
+        $sql = "DELETE FROM '{$table}' WHERE '{$rows}' = '{$value}';";
+
+        $data = $this -> connection_bm -> query($sql);
+
+        return $data;
     }
 }
 
