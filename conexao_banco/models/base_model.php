@@ -14,39 +14,51 @@ abstract class base_model { //abstract --> porque servira de base para outras cl
             return $this -> connection_bm;
     }
 
-    public function create(string $table, $rows = [], array $value = []){
+    public function create(string $table, array $rows = [], array $value = []){
         
-        $sql = "INSERT INTO '{$table}' '{$rows}' VALUES ({$value})";
+        $sql = "INSERT INTO {$table} {$rows} VALUES ('{$value}')";
 
-        $data = $this -> connection_bm -> query($sql) -> insert_id;
-
+        try{
+            $data = $this -> connection_bm -> query($sql) -> insert_id;
+        }
+        catch(exception $error){
+            echo "Erro código: {$error->getcode()} <br>Mensagem: {$error->getMessage()}";
+            $data = NULL;
+        }
         return $data ?? 0;
     }
 
     public function read_all($table, $rows_param = []){
         $rows = implode(",", $rows_param);
 
-        $sql = "SELECT '{$rows}' FROM '{$table}';";
+        $sql = "SELECT {$rows} FROM {$table};";
 
-        $data = $this -> connection_bm -> query($sql);
-
+        try {
+            $data = $this -> connection_bm -> query($sql);
+        }
+        catch(exception $error){
+            echo "Erro código: {$error->getcode()} <br>Mensagem: {$error->getmessage()}";
+            $data = NULL;
+        }
         return $data;
     }
 
     public function read($table, $rows, $value){
 
-        $sql = "SELECT * FROM '{$table}' WHERE '{$rows}' = '{$value}';";
+        $sql = "SELECT * FROM {$table} WHERE {$rows} = '{$value}';";
 
-        $data = $this -> connection_bm -> query($sql);
-
+        try {
+            $data = $this -> connection_bm -> query($sql);
+        }
+        catch(exception $error){
+            echo "Erro código: {$error->getcode()}<br>Mensagem: {$error->getmessage()}";
+            $data = NULL;
+        }
         return $data;
     }
 
-    public function update($table, $rows_param = [], $value_param = [], $rows_where, $value_where){
-
-        $rows = implode(",", $rows_param);
-
-        $sql = "UPDATE '{$table}'";
+    public function update($table, $rows_param = [], $value_param = [], $rows_where = [], $value_where = []){
+        //update tabela set rowparam = valueparam where rowset = valueset
 
         $qtd_rows = count($rows_param);
         $qtd_value = count($value_param);
@@ -55,18 +67,48 @@ abstract class base_model { //abstract --> porque servira de base para outras cl
             throw new Exception("Number of rows does not match the number of values!", 500);
         }
 
-        $sql .= "WHERE '{$rows_where}' = '{$value_where}';";
+        $rows_param = implode("','", $rows_param);
+        $value_param = implode("','", $value_param);
 
-        $data = $this -> connection_bm -> query($sql);
+        $sql = "UPDATE {$table} SET ('{$rows_param}') = ('{$value_param}') WHERE";
 
+        if(($qtd_rows && $qtd_value) > 1){
+            for($i=0; $i<$qtd_rows; $i++){
+
+                $opr = '';
+                if($i<=$qtd_rows-1){
+                    $opr = 'AND';
+                }
+                $sql .= " ('{$rows_where[$i]}') = ('{$value_where[$i]}') $opr";
+            }    
+        }
+        else{
+            $sql .= " ('{$rows_where}') = ('{$value_where}')";
+        }
+      $sql .= ';';
+
+        
+       
+        try {
+            $data = $this -> connection_bm -> query($sql);
+        }
+        catch(exception$error){
+            echo "Erro código: {$error->getcode()}<br>Mensagem: {$error->getmessage()}";
+            $data = NULL;
+        }
         return $data;
     }
 
     public function delete($table, $rows, $value){
-        $sql = "DELETE FROM '{$table}' WHERE '{$rows}' = '{$value}';";
+        $sql = "DELETE FROM {$table} WHERE {$rows} = '{$value}';";
 
-        $data = $this -> connection_bm -> query($sql);
-
+        try {
+            $data = $this -> connection_bm -> query($sql);
+        }
+        catch(exception $error){
+            echo "erro código: {$error->getcode()}<br>Mensagem: {$error->getmessage()}";
+            $data = NULL;
+        }
         return $data;
     }
 }

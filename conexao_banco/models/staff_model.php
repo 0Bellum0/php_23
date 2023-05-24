@@ -26,11 +26,17 @@ class staff_model extends base_model {
         ];
     }
 
-    public function read_staff(){
+    public function read_all_staff(){
+        return $this -> read_all($this -> table, $this -> rows);
+    }
 
+    public function update_staff(){
+        return $this -> update($this -> table, $this -> rows, $this -> , $this -> , $this ->);
     }
 
     public function delete_staff(){
-
+        return $this -> delete($this -> table, $this -> rows, $this ->);
     }
 }
+
+$staff_model = new staff_model();
