@@ -121,6 +121,8 @@ foreach($lista_pecas_manutencao as $item => $peca){
     echo $item . ": " . $peca . '<br>';
 }
 
+echo "<br>";
+
 $vida_pneu = 75000;
 $vida_motor = 750000;
 $vida_cambio = 250000;
@@ -137,11 +139,20 @@ $vida_util = [
     'embreagem' => $vida_embreagem,
 ];
 
+$partes_manutencao = [];
+
 foreach($vida_util as $parte => $km_troca){
     if($kmFinal>=$km_troca){
         echo "{$parte}: Necessita manutencao!<br>";
+        $partes_manutencao[$parte] = $km_troca;
     }
     else{
         echo "{$parte}: {$km_troca} km<br>";
     }
+}
+
+echo "<br>";
+
+foreach($partes_manutencao as $pecas => $troca){
+    echo "{$pecas}: {$troca}km<br>";
 }
